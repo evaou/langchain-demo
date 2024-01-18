@@ -8,14 +8,17 @@
 
 ![](./img/architecture.excalidraw.png)
 
-## Call Flow with OpenAI Function Calling
+## Call Flow
 
 ```mermaid
 sequenceDiagram
     user ->> lineBot: user input
     lineBot ->> callbackApi: user input
 
-    rect rgb(255, 255, 143)
+    rect rgb(240,255,240)
+
+    Note right of callbackApi: OpenAI Function Calling
+
     callbackApi ->> openAI: user input + functions
     openAI -->> callbackApi: JSON with arguments to call the model chosen functions
     callbackApi ->> 3rdParty: call the model-chosen functions 
