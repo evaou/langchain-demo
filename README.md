@@ -13,21 +13,21 @@
 ```mermaid
 sequenceDiagram
     user ->> lineBot: user input
-    lineBot ->> callbackApi: user input
+    lineBot ->> webApp: user input
 
     rect rgb(240,255,240)
 
-    Note right of callbackApi: OpenAI Function Calling
+    Note right of webApp: OpenAI Function Calling
 
-    callbackApi ->> openAI: user input + functions
-    openAI -->> callbackApi: JSON with arguments to call the model chosen functions
-    callbackApi ->> 3rdParty: call the model-chosen functions 
-    3rdParty -->> callbackApi: response of the model-chosen functions
-    callbackApi ->> openAI: summarize previous requests and responses 
-    openAI -->> callbackApi: summary
+    webApp ->> openAI: user input + functions
+    openAI -->> webApp: JSON with arguments to call the model chosen functions
+    webApp ->> 3rdParty: call the model-chosen functions
+    3rdParty -->> webApp: response of the model-chosen functions
+    webApp ->> openAI: summarize previous requests and responses
+    openAI -->> webApp: summary
     end
 
-    callbackApi -->> lineBot: summary
+    webApp -->> lineBot: summary
     lineBot --> user: summary
 ```
 
