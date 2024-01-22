@@ -101,6 +101,10 @@ sequenceDiagram
 ![](./img/azure-web-app.png)
 
 2. Web App > Configuration > Application settings > Advanced edit
+   - Update the following placeholders, then copy and paste
+     - <LINE_CHANNEL_ACCESS_TOKEN>
+     - <LINE_CHANNEL_SECRET>
+     - <OPENAI_API_KEY>
 
 ``` json
 [
