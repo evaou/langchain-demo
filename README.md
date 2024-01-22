@@ -1,14 +1,33 @@
+<!-- vscode-markdown-toc -->
+- [LangChain Demo with LINE Bot](#langchain-demo-with-line-bot)
+  - [Demo Example](#demo-example)
+  - [Architecture](#architecture)
+  - [Call Flow](#call-flow)
+  - [Run Web App Locally](#run-web-app-locally)
+  - [Deployment](#deployment)
+    - [1. Set up LINE Bot](#1-set-up-line-bot)
+    - [2. Run Web App Remotely](#2-run-web-app-remotely)
+      - [Render](#render)
+      - [Azure](#azure)
+    - [3. Set up Webhook on LINE Messing API](#3-set-up-webhook-on-line-messing-api)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 # LangChain Demo with LINE Bot
 
-## Demo Example
+## <a name='DemoExample'></a>Demo Example
 
 <img src="./img/linebot-demo.png" alt="image" width="50%" height="auto">
 
-## Architecture
+## <a name='Architecture'></a>Architecture
 
 ![](./img/architecture.excalidraw.png)
 
-## Call Flow
+## <a name='CallFlow'></a>Call Flow
 
 ```mermaid
 sequenceDiagram
@@ -31,7 +50,7 @@ sequenceDiagram
     lineBot --> user: summary
 ```
 
-## Run Web App Locally
+## <a name='RunWebAppLocally'></a>Run Web App Locally
 
 - Create .env file
 
@@ -51,15 +70,15 @@ sequenceDiagram
   $ curl http://localhost:5000/hello
   ```
 
-## Deployment
+## <a name='Deployment'></a>Deployment
 
-### 1. Set up LINE Bot
+### <a name='SetupLINEBot'></a>1. Set up LINE Bot
 
 - [LINE Developers Console](https://developers.line.biz/console/) > Create a Provider > Create a Messaging API Channel
 
-### 2. Deploy Web App on one of the following platforms
+### <a name='RunWebAppRemotely'></a>2. Run Web App Remotely
 
-#### Render
+#### <a name='Render'></a>Render
 
 [![Deploy to Render](http://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
@@ -75,7 +94,7 @@ sequenceDiagram
 
 2. [Render Blueprints](https://dashboard.render.com/blueprints) > Resources > Get `<web-service-url>`
 
-#### [Azure](https://portal.azure.com/#home)
+#### <a name='Azurehttps:portal.azure.comhome'></a>[Azure](https://portal.azure.com/#home)
 
 1. Create App Services > Web App
 
@@ -145,6 +164,6 @@ cd src && python -m uvicorn main:app --host 0.0.0.0
 
 8. Web App > Overview > Default Domain > Get `<web-service-url>`
   
-### 3. Set up Webhook on LINE Messing API
+### <a name='SetupWebhookonLINEMessingAPI'></a>3. Set up Webhook on LINE Messing API
 
 - [LINE Developers Console](https://developers.line.biz/console/) > Provider > Messaging API > Webhook URL > Edit and Verify `<web-service-url>/callback` > Enable "Use webhook"
